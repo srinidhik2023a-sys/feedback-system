@@ -7,5 +7,10 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('Clone') {
+            steps {
+                git 'https://github.com/srinidhik2023a-sys/feedback-system.git'
+            }
+        }
     }
 }
