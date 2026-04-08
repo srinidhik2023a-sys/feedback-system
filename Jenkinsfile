@@ -2,15 +2,18 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build & Test') {
             steps {
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
-        stage('Clone') {
+
+        stage('Package') {
             steps {
-                git 'https://github.com/srinidhik2023a-sys/feedback-system.git'
+                bat 'mvn package'
             }
         }
+
     }
 }
